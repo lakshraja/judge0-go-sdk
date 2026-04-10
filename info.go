@@ -1,6 +1,18 @@
 package judge0
 
 
+type Language struct {
+	ID int `json:"id"`
+	Name string `json:"name"`
+}
+
+type Status struct {
+	ID int `json:"id"`
+	Description string `json:"description"`
+
+}
+
+
 const (
 	IN_QUEUE = 1
 	PROCESSING = 2
