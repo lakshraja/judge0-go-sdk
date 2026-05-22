@@ -102,15 +102,14 @@ func (req *RequestFields) isValid() error{
 }
 
 
-func (sub *Submission) asBody() ([]byte, error){
+func (request *RequestFields) asBody() ([]byte, error){
 
-	err := sub.Request.isValid()
+	req := *request
+
+	err := req.isValid()
 	if err!=nil{
 		return nil, err
 	}
-
-	req:=sub.Request
-
 
 	encodeField(&req.SourceCode)
 	encodeField(req.Stdin)
